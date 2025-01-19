@@ -2,11 +2,11 @@ FROM ubuntu:latest
 
 RUN apt update
 
-RUN apt install vim
+RUN apt install -y vim 
 
 RUN apt install net-tools
 
-RUN apt install -y openssh-server
+RUN apt install openssh-server
 RUN mkdir /var/run/sshd
 RUN ssh-keygen -A
 
