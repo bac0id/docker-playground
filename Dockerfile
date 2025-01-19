@@ -7,6 +7,6 @@ RUN ssh-keygen -A
 
 # RUN echo 'root:your_password' | chpasswd
 
-EXPOSE 8022
+EXPOSE 22
 
 CMD ["/usr/sbin/sshd", "-D"]
