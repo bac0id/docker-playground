@@ -1,14 +1,14 @@
-FROM ubuntu:latest
+FROM alpine:latest
 
 RUN apt update
 
 # RUN apt install -y vim 
 
-RUN apt install -y net-tools
+# RUN apt install -y net-tools
 
-RUN apt install -y openssh-server
-RUN mkdir /var/run/sshd
-RUN ssh-keygen -A
+# RUN apt install -y openssh-server
+# RUN mkdir /var/run/sshd
+# RUN ssh-keygen -A
 
 # Install docker
 RUN apt install -y ca-certificates curl
@@ -25,16 +25,15 @@ RUN apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin do
 
 COPY entrypoint.sh .
 
-
-# Start port placeholder
-WORKDIR /app
-RUN apt install -y python3 python3-pip python3-venv
-RUN python3 -m venv .venv
-ENV VIRTUAL_ENV /app/.venv
-ENV PATH "$VIRTUAL_ENV/bin:$PATH"
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-COPY app.py .
+# Python venv
+# WORKDIR /app
+# RUN apt install -y python3 python3-pip python3-venv
+# RUN python3 -m venv .venv
+# ENV VIRTUAL_ENV /app/.venv
+# ENV PATH "$VIRTUAL_ENV/bin:$PATH"
+# COPY requirements.txt .
+# RUN pip install --no-cache-dir -r requirements.txt
+# COPY app.py .
 
 EXPOSE 9000
 EXPOSE 9443

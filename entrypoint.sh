@@ -1,15 +1,14 @@
 nohup dockerd &
-
-echo "sleep 10"
+echo "sleep 10 seconds to wait docker init"
 sleep 10
 
-service docker stop
-service docker start
+# service docker stop
+# service docker start
 
+# Install portainer-ce
+echo "Installing portainer-ce"
 docker pull portainer/portainer-ce
-
 docker volume create portainer_data
-
 docker run -d -p 8000:8000 -p 9443:9443 -p 9000:9000 \
     --name portainer \
     --restart=always \
@@ -19,4 +18,4 @@ docker run -d -p 8000:8000 -p 9443:9443 -p 9000:9000 \
 
 #python3 /app/app.py
 echo "Entrypoint.sh Done."
-read -n 1 -s
+read -n 1 -s # Wait to not finish bash script
