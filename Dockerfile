@@ -42,4 +42,4 @@ EXPOSE 8000
 
 WORKDIR /
 
-ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["bash", "entrypoint.sh"]
