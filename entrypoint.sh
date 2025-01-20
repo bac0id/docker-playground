@@ -1,5 +1,6 @@
 #nohup dockerd &
 
+service docker stop
 service docker start
 
 docker pull portainer/portainer-ce
