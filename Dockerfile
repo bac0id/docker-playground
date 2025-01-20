@@ -2,7 +2,7 @@ FROM ubuntu:latest
 
 RUN apt update
 
-RUN apt install -y vim 
+# RUN apt install -y vim 
 
 RUN apt install -y net-tools
 
@@ -21,6 +21,9 @@ RUN echo \
   tee /etc/apt/sources.list.d/docker.list > /dev/null
 RUN apt update
 RUN apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+RUN dockerd
+
 
 # RUN echo 'root:your_password' | chpasswd
 
