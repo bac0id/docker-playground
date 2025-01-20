@@ -18,3 +18,5 @@ docker run -d -p 8000:8000 -p 9443:9443 -p 9000:9000 \
     portainer/portainer-ce
 
 #python3 /app/app.py
+echo "Entrypoint.sh Done."
+read -n 1 -s
