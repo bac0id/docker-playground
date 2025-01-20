@@ -22,7 +22,9 @@ RUN echo \
 RUN apt update
 RUN apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
-# RUN dockerd
+
+COPY entrypoint.sh .
+
 
 # Start port placeholder
 WORKDIR /app
@@ -35,5 +37,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY app.py .
 
 EXPOSE 9000
+EXPOSE 9443
+EXPOSE 8000
 
-CMD ["python3", "app.py"]
+WORKDIR /
+
+ENTRYPOINT ["entrypoint.sh"]
