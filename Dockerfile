@@ -22,8 +22,14 @@ RUN echo \
 RUN apt update
 RUN apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
-# RUN echo 'root:your_password' | chpasswd
+# RUN dockerd
 
-EXPOSE 9001
+# Start port placeholder
+WORKDIR /app
+COPY requirements.txt .
+COPY app.py .
+RUN pip install -r requirements.txt
 
-CMD ["nohup", "dockerd"]
+EXPOSE 9000
+
+CMD ["python", "app.py"]
