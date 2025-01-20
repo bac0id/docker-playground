@@ -1,5 +1,8 @@
 nohup dockerd &
 
+echo "sleep 10"
+sleep 10
+
 service docker stop
 service docker start
 
