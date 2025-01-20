@@ -22,11 +22,8 @@ RUN echo \
 RUN apt update
 RUN apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
-RUN dockerd
-
-
 # RUN echo 'root:your_password' | chpasswd
 
-EXPOSE 22
+EXPOSE 9001
 
-CMD ["/usr/sbin/sshd", "-D"]
+CMD ["dockerd"]
