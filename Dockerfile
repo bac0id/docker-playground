@@ -26,4 +26,4 @@ RUN apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin do
 
 EXPOSE 9001
 
-CMD ["nohup", "dockerd", "&"]
+CMD ["nohup", "dockerd"]
