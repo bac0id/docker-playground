@@ -1,4 +1,6 @@
-nohup dockerd &
+#nohup dockerd &
+
+service docker start
 
 docker pull portainer/portainer-ce
 
