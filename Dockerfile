@@ -26,7 +26,7 @@ RUN apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin do
 
 # Start port placeholder
 WORKDIR /app
-RUN apt install python
+RUN apt install -y python3 python3-pip
 COPY requirements.txt .
 COPY app.py .
 RUN pip install -r requirements.txt
