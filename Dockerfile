@@ -26,10 +26,13 @@ RUN apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin do
 
 # Start port placeholder
 WORKDIR /app
-RUN apt install -y python3 python3-pip
+RUN apt install -y python3 python3-pip python3-venv
+RUN python3 -m venv .venv
+ENV VIRTUAL_ENV /app/.venv
+ENV PATH "$VIRTUAL_ENV/bin:$PATH"
 COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 COPY app.py .
-RUN pip3 install -r requirements.txt
 
 EXPOSE 9000
 
