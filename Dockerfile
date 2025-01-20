@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM debian:bullseye-slim
 
 RUN apt update
 
