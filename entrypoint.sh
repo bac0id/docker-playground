@@ -1,4 +1,4 @@
-#nohup dockerd &
+nohup dockerd &
 
 service docker stop
 service docker start
